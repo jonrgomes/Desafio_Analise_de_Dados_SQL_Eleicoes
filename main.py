@@ -9,7 +9,7 @@ disputa = base["disputas"]
 print("\n-----DESAFIO ELEIÇÕES 2026(FAKE)------\n")
 print('Nível 01 - LAÇOS DE REPETIÇÃO:\n')
 
-print("1 - Dados da eleição 2026:\n")
+print("----Dados da eleição 2026----\n")
 candidatos = len(base["candidatos"])
 disputa = len(base['disputas'])
 ufs = len(base["ufs"])
@@ -20,6 +20,23 @@ print(f'Disputas: {disputa}')
 print(f'UFS: {ufs}')
 print(f'Partidos: {partidos}\n')
 
-print("1 - 10 Primeiros candidatos:\n")
+print("----10 Primeiros candidatos----\n")
 for dados1, dados2 in enumerate(candidato[0:10], 1):
-    print(f"{dados1} - {dados2["nome_urna"]} | {dados2["cargo"]} | {dados2["uf"]} | {dados2["partido"]}")
+    print(f"{dados1} - {dados2["nome_urna"]} | {dados2["cargo"]} | {dados2["uf"]} | {dados2["partido"]}\n")
+
+print("----Número de Candidatos por Cargo----\n")
+contagem = {}
+for qtd_candidatoscargo in candidato:
+    cargo = qtd_candidatoscargo["cargo"]
+    contagem[cargo] = contagem.get(cargo, 0) + 1
+    
+soma = 0
+for cargo, total in contagem.items():
+    print(f"{cargo}: {total}")
+    soma += total
+
+print(f"Soma: {soma}")
+    
+    
+    
+    
