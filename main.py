@@ -35,7 +35,18 @@ for cargo, total in contagem.items():
     print(f"{cargo}: {total}")
     soma += total
 
-print(f"Soma: {soma}")
+print(f"Soma: {soma}\n")
+
+print("----Candidatos à Deputado Federal SP----\n")
+dep_federal_sp = []
+for cargo in candidato:
+    if cargo["cargo"] == "Deputado Federal" and cargo["uf"] == "SP":
+        dep_federal_sp.append(cargo)
+print(f"Quantidade: {len(dep_federal_sp)}")
+
+for cargo in dep_federal_sp:
+    print(cargo["nome_urna"])
+
     
     
     
