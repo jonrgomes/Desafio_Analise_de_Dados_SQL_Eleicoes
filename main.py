@@ -46,6 +46,15 @@ print(f"Quantidade: {len(dep_federal_sp)}")
 
 for cargo in dep_federal_sp:
     print(cargo["nome_urna"])
+    
+print("\n----Idade média dos candidatos-----\n")
+maior = 0
+for idade in candidato: 
+    soma += idade["idade"]
+    
+media = soma / len(candidato)
+print(f"Idade média: {media:.2f}.\n")   
+
 
     
     
