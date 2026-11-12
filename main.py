@@ -53,8 +53,15 @@ for idade in candidato:
     soma += idade["idade"]
     
 media = soma / len(candidato)
-print(f"Idade média: {media:.2f}.\n")   
+print(f"Idade média: {media:.2f}.") 
+maior = 0  
+for votado in candidato: 
+    votos = votado["apuracao"]["turno1"]["votos_nominais"]
+    if votos > maior:
+        maior = votos
+print(f"Candiato mais votado: {maior}\n")
 
+    
 
     
     
