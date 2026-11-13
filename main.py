@@ -20,7 +20,7 @@ print(f'Disputas: {disputa}')
 print(f'UFS: {ufs}')
 print(f'Partidos: {partidos}\n')
 
-print("----10 Primeiros candidatos----\n")
+print("----0 Primeiros candidatos----\n")
 for dados1, dados2 in enumerate(candidato[0:10], 1):
     print(f"{dados1} - {dados2["nome_urna"]} | {dados2["cargo"]} | {dados2["uf"]} | {dados2["partido"]}\n")
 
@@ -61,9 +61,16 @@ for votado in candidato:
         maior = votos
 print(f"Candiato mais votado: {maior}\n")
 
-    
+print("\n----Contador de candidatos-----\n")
+def contar_por(lista, campo):
+    contagem = {}
+    for candi in lista:
+        valor =  candi[campo]
+        contagem[valor] = contagem.get(valor, 0) + 1
+    return contagem
 
-    
+print(contar_por(candidatos, "campo"))
+print(contar_por(candidatos, "partido"))
     
     
     
